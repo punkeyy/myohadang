@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>묘하당 MYOHADANG — 오늘의 선택이 내일의 기회가 된다</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Noto Serif KR & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- GSAP for buttery smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', '"Noto Serif KR"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans KR"', 'sans-serif'],
+                    },
+                    colors: {
+                        studio: {
+                            lightBg: '#fafaf9',
+                            lightText: '#0d0d0c',
+                            darkBg: '#0d0d0c',
+                            darkText: '#fafaf9',
+                            accent: '#c5a880', // Warm Gold Accent
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        /* Spinning badges and geometric alignments */
+        .spinning-text {
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Smooth zoom image effect */
+        .project-img-container img {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-img-container:hover img {
+            transform: scale(1.06);
+        }
+        /* Page transitions wrapper */
+        .page-view {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+    </style>
+</head>
+<body class="bg-studio-lightBg text-studio-lightText dark:bg-studio-darkBg dark:text-studio-darkText font-sans transition-colors duration-500 overflow-x-hidden antialiased">
+
+    <!-- -->
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-studio-lightText/10 dark:border-studio-darkText/10 bg-studio-lightBg/80 dark:bg-studio-darkBg/80 backdrop-blur-md transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="font-serif text-2xl tracking-tight font-bold relative group">
+                묘하당<span class="text-studio-accent">.</span>
+                <span class="absolute left-0 bottom-0 w-0 h-[1px] bg-studio-lightText dark:bg-studio-darkText transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-wider">
+                <a href="javascript:void(0)" id="nav-readings" onclick="navigateTo('readings')" class="hover:text-studio-accent transition-colors duration-300">Readings</a>
+                <a href="javascript:void(0)" id="nav-philosophy" onclick="navigateTo('philosophy')" class="hover:text-studio-accent transition-colors duration-300">Philosophy</a>
+                <a href="javascript:void(0)" id="nav-process" onclick="navigateTo('process')" class="hover:text-studio-accent transition-colors duration-300">Process</a>
+            </nav>
+
+            <div class="flex items-center">
+                <a href="javascript:void(0)" onclick="openApplyModal()" class="px-6 py-2.5 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest rounded-full hover:bg-studio-accent hover:text-studio-lightBg dark:hover:bg-studio-accent dark:hover:text-studio-lightBg transition-all duration-300 shadow-sm">
+                    신청하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main SPA View Wrapper -->
+    <main class="pt-24 min-h-[calc(100vh-200px)]">
+
+        <!-- -->
+        <!-- ========================================== -->
+        <!-- VIEW: HOME (HERO SECTION)                  -->
+        <!-- ========================================== -->
+        <div id="page-home" class="page-view opacity-100 block">
+            <section class="min-h-[85vh] flex flex-col justify-between pt-16 pb-16 px-6 max-w-7xl mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+                    <div class="lg:col-span-8 space-y-8">
+                        <div class="inline-block border border-studio-accent/40 rounded-full px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-studio-accent">
+                            묘하당 프로젝트
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light leading-snug tracking-tight keep-all">
+                            오늘의 선택이 <br>
+                            <span class="italic text-studio-accent font-normal">내일의 기회가 된다.</span>
+                        </h1>
+                        <p class="max-w-3xl text-stone-600 dark:text-stone-400 text-xs sm:text-sm leading-relaxed font-light keep-all">
+                            묘하당은 단순한 점술에 머무는 타로를 거부합니다. 타로, AI, 그리고 전문 심리 상담이 함께 어우러져, <br class="hidden sm:block">
+                            당신의 무의식 속에 숨겨진 기질과 행동 성향을 정교하게 도출합니다. 지금 당신 앞에 놓인 갈림길에서 <br class="hidden sm:block">
+                            한 단계 더 선명하고 주체적인 선택의 기준을 정립하는 프리미엄 자아 분석 프로젝트입니다.
+                        </p>
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <a href="javascript:void(0)" onclick="navigateTo('readings')" class="px-8 py-4 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-semibold uppercase tracking-wider rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-black/5">
+                                시작하기 (Readings)
+                                <span class="inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end relative">
+                        <div class="relative w-48 h-48 md:w-56 md:h-56">
+                            <svg class="spinning-text w-full h-full text-studio-lightText/60 dark:text-studio-darkText/60" viewBox="0 0 100 100">
+                                <defs>
+                                    <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+                                </defs>
+                                <text font-size="6.3" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="2" fill="currentColor">
+                                    <textPath href="#circlePath">
+                                        MYOHADANG SYSTEM • TODAY'S CHOICE TOMORROW'S OPPORTUNITY • 
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="font-serif text-5xl font-light text-studio-accent italic">M</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- -->
+        <!-- ========================================== -->
+        <!-- VIEW: READINGS                             -->
+        <!-- ========================================== -->
+        <div id="page-readings" class="page-view opacity-0 hidden">
+            <section class="py-12 bg-stone-50 dark:bg-[#080808] transition-colors duration-500">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-16 gap-8">
+                        <div class="max-w-4xl space-y-4">
+                            <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">SELECTED READINGS</span>
+                            <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-light tracking-tight whitespace-nowrap overflow-x-auto">타로가 운세에서 멈추지 않도록.</h2>
+                            <div class="text-stone-500 dark:text-stone-400 text-sm font-light leading-relaxed space-y-2">
+                                <p class="keep-all">묘하당은 타로를 단순한 우연, 직관, 재미의 영역에만 두지 않습니다.</p>
+                                <p class="keep-all lg:whitespace-nowrap">카드가 건네는 상징을 통해 나의 기질과 성향을 돌아보고, 지금 필요한 선택의 기준을 발견하도록 돕습니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs font-semibold tracking-wider uppercase">
+                            <button id="tab-all" onclick="filterTab('all')" class="tab-btn px-5 py-2.5 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg rounded-full transition-colors">All</button>
+                            <button id="tab-temperament" onclick="filterTab('temperament')" class="tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">기질 이해</button>
+                            <button id="tab-nature" onclick="filterTab('nature')" class="tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">성향 발견</button>
+                            <button id="tab-direction" onclick="filterTab('direction')" class="tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">방향 정리</button>
+                            <button id="tab-practical" onclick="filterTab('practical')" class="tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">실질적 도움</button>
+                        </div>
+                    </div>
+
+                    <div id="readings-info-board" class="hidden mb-16 p-8 md:p-10 bg-white dark:bg-stone-900/60 rounded-3xl border border-studio-lightText/5 dark:border-studio-darkText/5 shadow-sm">
+                        <div class="max-w-4xl space-y-6">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-studio-accent"></span>
+                                <span id="info-badge" class="text-[10px] font-mono tracking-widest uppercase text-studio-accent">기질 이해</span>
+                            </div>
+                            <h3 id="info-title" class="text-2xl md:text-3xl font-serif font-light text-studio-lightText dark:text-studio-darkText">기질이 우리에게 미치는 영향</h3>
+                            <div id="info-desc" class="text-stone-600 dark:text-stone-400 text-sm md:text-base leading-relaxed space-y-4 font-light text-justify">
+                                <!-- Filled by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                        <div class="portfolio-card space-y-4">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none pointer-events-none">
+                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.png" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card space-y-4 md:mt-24">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none pointer-events-none">
+                                <img src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- -->
+        <!-- ========================================== -->
+        <!-- VIEW: PHILOSOPHY                           -->
+        <!-- ========================================== -->
+        <div id="page-philosophy" class="page-view opacity-0 hidden">
+            <section class="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">STUDIO MANIFESTO</span>
+                    <h2 class="text-2xl md:text-3xl font-serif font-light leading-snug keep-all">
+                        타로와 깊이 있는 상담을 통해, <br>삶 속에 숨어 있는 나만의 무늬를 함께 찾아갑니다.
+                    </h2>
+                    <div class="border-l-2 border-studio-accent pl-6 py-2">
+                        <p class="font-serif italic text-base opacity-80 text-studio-accent leading-relaxed">"자아 분석은 단순한 통계의 결과물이 아니라, <br>무의식이 띄우는 시각적 파도와의 정교한 조우입니다."</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-8 font-light leading-relaxed text-stone-600 dark:text-stone-400">
+                    <!-- 문단간 위아래 간격을 좁게 정렬하기 위해 내부 wrapper 생성 -->
+                    <div class="space-y-2.5 text-lg text-justify keep-all">
+                        <p class="lg:whitespace-nowrap">
+                            묘하당은 타로를 미래를 맞히는 도구가 아니라, 내면과 삶의 흐름을 이해하기 위한 언어로 해석합니다.
+                        </p>
+                        <p>
+                            카드 속 상징과 원형을 통해 지금의 나를 더 선명하게 들여다봅니다.
+                        </p>
+                        <p>
+                            심리 상담 학계의 명문 이론들을 결합하여, 여러분이 직면한 갈림길의 본질을 밝힙니다.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-studio-lightText dark:text-studio-darkText font-serif text-xl">시각적 프로젝션 테라피</h4>
+                            <p class="text-xs text-justify keep-all leading-relaxed">카드의 이미지는 방어적인 자아의 장벽을 부수고, <br>마음 가장 깊은 곳의 정서를 부드럽게 대변하여 의식 위로 올려보냅니다.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-studio-lightText dark:text-studio-darkText font-serif text-xl">정서적 얼라인먼트</h4>
+                            <p class="text-sm text-justify keep-all">단순한 조언에 그치지 않고, 복잡한 갈등 요소들을 체계적으로 재정렬하여 스스로 납득할 수 있는 확실한 생활 실천 규준을 조각해 드립니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW: PROCESS                              -->
+        <!-- ========================================== -->
+        <div id="page-process" class="page-view opacity-0 hidden">
+            <section class="py-24 bg-stone-100 dark:bg-[#111110] border-t border-b border-studio-lightText/10 dark:border-studio-darkText/10 transition-colors duration-500">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="mb-16 text-center max-w-2xl mx-auto space-y-4">
+                        <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">OUR CAPABILITIES</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-tight md:whitespace-nowrap">묘하당은 '이해'에서 끝나지 않습니다.</h2>
+                        <p class="text-stone-500 text-sm font-light">내면을 발견하고, 삶에 적용하는 과정까지 함께합니다.</p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto divide-y divide-studio-lightText/10 dark:divide-studio-darkText/10">
+                        <div class="py-6 cursor-pointer group accordion-item" onclick="toggleAccordion(1)">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <span class="font-mono text-xs opacity-40">01 /</span>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">무의식 상징 매핑 (Symbology Session)</h3>
+                                </div>
+                                <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
+                            </div>
+                            <div id="acc-content-1" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
+                                타로 카드에 담긴 상징을 통해 지금의 마음을 함께 들여다봅니다.<br>반복되는 감정과 관계의 흐름, 나를 붙잡고 있는 패턴을 하나씩 살펴보며 현재의 내면을 이해합니다.
+                            </div>
+                        </div>
+
+                        <div class="py-6 cursor-pointer group accordion-item" onclick="toggleAccordion(2)">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <span class="font-mono text-xs opacity-40">02 /</span>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">기질 이해 (Data Matching)</h3>
+                                </div>
+                                <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
+                            </div>
+                            <div id="acc-content-2" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
+                                상담 내용을 바탕으로 타고난 기질과 성향을 깊이 분석합니다.<br>나의 강점은 무엇인지, 어떤 상황에서 쉽게 흔들리는지 함께 살펴보며 나에게 맞는 방향을 찾아갑니다.
+                            </div>
+                        </div>
+
+                        <div class="py-6 cursor-pointer group accordion-item" onclick="toggleAccordion(3)">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <span class="font-mono text-xs opacity-40">03 /</span>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">정서 카운슬링 (Tuning Session)</h3>
+                                </div>
+                                <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
+                            </div>
+                            <div id="acc-content-3" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
+                                발견한 내용을 삶 속에서 자연스럽게 실천할 수 있도록 함께 이야기 나눕니다.<br>작은 변화가 오래 이어질 수 있는 방향을 함께 찾아갑니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-studio-lightText/10 dark:border-studio-darkText/10 bg-studio-lightBg dark:bg-studio-darkBg py-16 px-6 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+            <div class="space-y-3">
+                <span class="font-serif text-3xl font-bold tracking-tight">묘하당<span class="text-studio-accent">.</span></span>
+                <p class="text-xs text-stone-500 font-light max-w-[280px]">당신의 숨겨진 본질적 강점을 기획하고, 주권적인 인격체로서 매일의 기회를 스스로 설계하도록 돕습니다.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-xs font-semibold tracking-wider uppercase">
+                <div class="space-y-2">
+                    <span class="text-[9px] font-mono text-studio-accent">CREATIVE STUDIO</span>
+                    <div class="flex flex-col space-y-1.5 font-light normal-case">
+                        <a href="javascript:void(0)" onclick="navigateTo('philosophy')" class="hover:text-studio-accent transition-colors">묘하당 매니페스토</a>
+                        <a href="javascript:void(0)" onclick="navigateTo('process')" class="hover:text-studio-accent transition-colors">카운셀링 프로세스</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center border-t border-studio-lightText/5 dark:border-studio-darkText/5 pt-8 mt-12 text-[10px] font-mono tracking-widest text-stone-400">
+            <div>© 2026 MYOHADANG ARCHETYPE ALL RIGHTS RESERVED.</div>
+            <div class="mt-4 sm:mt-0">DESIGNED TO AWAKEN TRUE POTENTIALS</div>
+        </div>
+    </footer>
+
+    <!-- Case Study Slideout Modal -->
+    <div id="project-modal" class="fixed inset-y-0 right-0 w-full lg:w-[60vw] bg-studio-lightBg dark:bg-studio-darkBg border-l border-studio-lightText/10 dark:border-studio-darkText/10 z-50 transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl overflow-y-auto hidden">
+        <div class="sticky top-0 right-0 p-6 flex justify-between items-center bg-studio-lightBg/90 dark:bg-studio-darkBg/90 backdrop-blur-sm border-b border-studio-lightText/5 dark:border-studio-darkText/5 z-10">
+            <span class="text-xs font-mono text-studio-accent uppercase tracking-widest" id="modal-category">01 // BRANDING IDENTITY</span>
+            <button onclick="closeProjectModal()" class="w-10 h-10 border border-studio-lightText/10 dark:border-studio-darkText/10 hover:border-studio-accent rounded-full flex items-center justify-center text-sm font-semibold transition-colors duration-300">
+                ✕
+            </button>
+        </div>
+
+        <div class="p-8 md:p-12 space-y-12">
+            <div class="space-y-4">
+                <h2 class="text-4xl md:text-5xl font-serif font-light leading-tight" id="modal-title">Scent Studio — AI Fragrances</h2>
+                <div class="flex flex-wrap gap-2 pt-2 text-[10px] font-mono tracking-wider uppercase">
+                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Symbology Mapping</span>
+                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Psychology Tuning</span>
+                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Self Calibration</span>
+                </div>
+            </div>
+
+            <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900 relative">
+                <img id="modal-image" src="" alt="Case Study Hero" class="w-full h-full object-cover">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-sm">
+                <div class="md:col-span-8 space-y-4 font-light leading-relaxed text-justify">
+                    <h4 class="font-serif text-lg font-semibold uppercase tracking-wide text-studio-accent">상징적 거울 치료의 본질</h4>
+                    <p id="modal-description" class="text-stone-600 dark:text-stone-400">
+                        Analyzing consumer scents through machine-learning analytics. They required a premium luxury aesthetic that didn't feel robotic, but rather deeply tactile, sensual, and highly personalized.
+                    </p>
+                </div>
+                <div class="md:col-span-4 space-y-4 border-l border-studio-lightText/10 dark:border-studio-darkText/10 pl-6">
+                    <h4 class="font-serif text-sm font-semibold uppercase tracking-wide">성향 분석 핵심 가이드</h4>
+                    <ul class="space-y-2 text-xs font-mono text-stone-500" id="modal-outcomes">
+                        <li>-</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
+                        <img id="modal-subimage-1" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
+                        <img id="modal-subimage-2" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-studio-lightText/10 dark:border-studio-darkText/10 flex flex-wrap gap-4 items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-mono block text-stone-400">나만의 본질을 완벽히 복원할 기회</span>
+                </div>
+                <button onclick="closeProjectModal()" class="px-6 py-3 border border-studio-lightText dark:border-studio-darkText hover:border-studio-accent rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
+                    상담 안내창 닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- -->
+    <script>
+        function navigateTo(pageId) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            const pages = document.querySelectorAll('.page-view');
+            const targetPage = document.getElementById(`page-${pageId}`);
+
+            if (!targetPage) return;
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('text-studio-accent');
+            });
+            const activeLink = document.getElementById(`nav-${pageId}`);
+            if (activeLink) {
+                activeLink.classList.add('text-studio-accent');
+            }
+
+            pages.forEach(p => {
+                p.classList.add('hidden');
+                p.classList.remove('opacity-100', 'block');
+                p.style.opacity = 0;
+            });
+
+            targetPage.classList.remove('hidden');
+            targetPage.classList.add('block');
+
+            if (typeof gsap !== 'undefined') {
+                gsap.fromTo(targetPage, 
+                    { opacity: 0, y: 15 }, 
+                    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+                );
+            } else {
+                targetPage.style.opacity = 1;
+            }
+
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+            }
+        }
+
+        function initScrollAnimations() {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+            try {
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.utils.toArray('.portfolio-card').forEach((elem) => {
+                    gsap.fromTo(elem, 
+                        { opacity: 0, y: 30 }, 
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            duration: 1.0, 
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: elem,
+                                start: "top 85%",
+                                toggleActions: "play none none none"
+                            }
+                        }
+                    );
+                });
+            } catch (err) {
+                console.warn("GSAP ScrollTrigger bypassed safely:", err);
+            }
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(`acc-content-${id}`);
+            const item = content.closest('.accordion-item');
+            const icon = item.querySelector('.accordion-icon');
+            
+            const isHidden = content.classList.contains('hidden');
+            
+            document.querySelectorAll('[id^="acc-content-"]').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.accordion-icon').forEach(el => el.style.transform = "rotate(0deg)");
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.style.transform = "rotate(180deg)";
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(content, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+                } else {
+                    content.style.opacity = 1;
+                }
+            }
+        }
+
+        const readingDetails = {
+            all: null,
+            temperament: {
+                badge: "TEMPERAMENT UNDERSTANDING // 기질 이해",
+                title: "기질이 우리에게 미치는 영향 & 타로와의 연관성",
+                text: `
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 타고난 기질이 우리의 매 순간 행동에 미치는 영향</p>
+                    <p>태생적 기질은 우리 성격의 고유한 DNA와 같습니다. 우리가 외부 자극을 받고, 결정을 조율하며, 갈등을 마주할 때 가동되는 자동적인 정서 반응 필터입니다. 자신의 기질을 온전히 인지하지 못한 채 살아가게 될 경우, 똑같은 상황 속에서 매번 동일한 무기력증, 대인관계 장벽, 번아웃 루프에 갇히게 됩니다.</p>
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 타로 카드와 인간 기질의 무의식적 연관성</p>
+                    <p>타로 카드의 깊이 있는 78가지 원형(Archetype)은 칼 융이 주창했던 분석심리학의 무의식 모델과 밀접하게 공명합니다. 우연히 고르게 되는 카드 한 장의 상징 체계에는 우리가 논리적으로 숨기거나 부정해왔던 방어기제가 전혀 침투하지 못합니다. 직관적인 시각 상징을 거울삼아 마주할 때, 우리는 정량적 설문지 너머에 감춰져 있던 자신의 가장 근본적인 기질 구성을 신뢰감 있고 투명하게 포착해 낼 수 있습니다.</p>
+                `
+            },
+            nature: {
+                badge: "DISCOVER NATURE // 성향 발견",
+                title: "나의 성향을 발견하는 세 단계의 객관적 프로세스",
+                text: `
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 1단계 - 타로카드 선택하기</p>
+                    <p>여러 장의 타로카드 가운데 마음이 가는 카드를 선택합니다. 내가 고른 카드는 현재의 기질과 마음의 흐름, 앞으로의 운세, 그리고 지금 나에게 필요한 선택의 방향을 살펴보는 첫걸음이 됩니다.</p>
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 2단계 - 성향 알아보기</p>
+                    <p>선택한 결과를 바탕으로 다양한 패턴을 분석해 나의 성향을 확인합니다. 스스로 생각하는 모습뿐 아니라, 평소에는 잘 몰랐던 나의 특징도 함께 알아볼 수 있습니다.</p>
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 3단계 - 나를 이해하기</p>
+                    <p>전문 상담사와 함께 결과를 하나씩 살펴보며 내 성향을 쉽게 이해하는 시간을 가집니다. 왜 그런 선택을 했는지, 어떤 방식이 나에게 잘 맞는지 이야기하며 나를 더 깊이 이해하게 됩니다.</p>
+                `
+            },
+            direction: {
+                badge: "ALIGN DIRECTION // 방향 정리",
+                title: "나에게 맞는 성장 방향을 찾는 이유",
+                text: `
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 나를 알면 선택이 달라집니다.</p>
+                    <p>
+                        우리는 매일 크고 작은 선택을 하며 살아갑니다.<br>
+                        하지만 내 성향을 잘 모른다면 중요한 순간에도 쉽게 흔들리거나 같은 고민을 반복하게 됩니다.<br>
+                        나를 이해하는 것은 더 나은 선택을 위한 첫걸음입니다.
+                    </p>
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 나에게 맞는 길은 따로 있습니다.</p>
+                    <p>타로와 상담을 통해 자신의 성향과 강점을 알아가면 어떤 환경에서 더 잘 성장하는지, 어떤 방식이 나에게 잘 맞는지를 자연스럽게 발견할 수 있습니다. 다른 사람을 따라가기보다 나에게 맞는 방향을 찾을 때 더 편안하고 꾸준하게 앞으로 나아갈 수 있습니다.</p>
+                `
+            },
+            practical: {
+                badge: "PRACTICAL ACTIONS // 실질적 도움",
+                title: "일상에서 바로 적용 가능한 변화의 지도",
+                text: `
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 나에게 맞는 해결 방법을 찾을 수 있습니다.</p>
+                    <p class="mb-4">누구에게나 같은 해결 방법이 맞는 것은 아닙니다. 상담을 통해 나의 성향과 현재 상황을 함께 살펴보며, 지금 나에게 가장 잘 맞는 선택과 해결 방법을 찾아갈 수 있습니다.</p>
+                    
+                    <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 일상에서 바로 활용할 수 있습니다.</p>
+                    <p class="mb-2">상담은 단순히 이야기를 나누는 시간에서 끝나지 않습니다.</p>
+                    <ul class="space-y-1 text-stone-500 list-disc pl-5 mb-4 text-xs sm:text-sm">
+                        <li>감정에 휘둘리지 않고 차분하게 판단하는 방법</li>
+                        <li>스트레스를 줄이고 마음을 돌보는 방법</li>
+                        <li>사람들과의 관계에서 불필요한 갈등을 줄이는 방법</li>
+                        <li>중요한 순간에 나에게 맞는 선택을 하는 방법</li>
+                    </ul>
+                    <p class="mb-6">상담에서 얻은 내용을 일상에 적용하며, 나에게 맞는 방식으로 조금씩 변화를 만들어 갈 수 있습니다.</p>
+
+                    <div class="mt-6 pt-6 border-t border-studio-lightText/10 dark:border-studio-darkText/10 bg-studio-accent/5 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold text-studio-accent uppercase tracking-widest block">SPECIAL OFFER // 묘하당 3회 체험 프로그램</span>
+                            <p class="text-xs text-stone-500 leading-relaxed max-w-xl">
+                                일회성 풀이에서 결코 끝나지 않습니다. 무의식 정밀 정교 진단, 기질 AI 분석 데이터 매핑, 최적 실천 루틴 행동 지침서 정립까지, 세 번에 걸쳐 완벽한 내면의 안정을 선물하는 올인원 정밀 케어 체험 특권입니다.
+                            </p>
+                        </div>
+                        <button onclick="navigateTo('process')" class="px-6 py-3 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-semibold rounded-full uppercase hover:bg-studio-accent hover:text-white transition-colors whitespace-nowrap self-stretch md:self-auto text-center">
+                            3회 체험 신청하기
+                        </button>
+                    </div>
+                `
+            }
+        };
+
+        function filterTab(category) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors";
+            });
+            
+            const selectedBtn = document.getElementById(`tab-${category}`);
+            if (selectedBtn) {
+                selectedBtn.className = "tab-btn px-5 py-2.5 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg rounded-full transition-colors";
+            }
+
+            const infoBoard = document.getElementById('readings-info-board');
+            if (!infoBoard) return;
+
+            if (category === 'all' || !readingDetails[category]) {
+                if (typeof gsap !== 'undefined') {
+                    gsap.to(infoBoard, {
+                        opacity: 0,
+                        y: -10,
+                        duration: 0.3,
+                        onComplete: () => {
+                            infoBoard.classList.add('hidden');
+                            document.querySelectorAll('.portfolio-card').forEach(card => {
+                                card.style.display = 'block';
+                            });
+                            if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+                        }
+                    });
+                } else {
+                    infoBoard.classList.add('hidden');
+                    document.querySelectorAll('.portfolio-card').forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            } else {
+                const data = readingDetails[category];
+                const badgeEl = document.getElementById('info-badge');
+                const titleEl = document.getElementById('info-title');
+                const descEl = document.getElementById('info-desc');
+
+                if (badgeEl) badgeEl.innerText = data.badge;
+                if (titleEl) titleEl.innerText = data.title;
+                if (descEl) descEl.innerHTML = data.text;
+
+                infoBoard.classList.remove('hidden');
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(infoBoard, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+                } else {
+                    infoBoard.style.opacity = 1;
+                }
+
+                document.querySelectorAll('.portfolio-card').forEach(card => {
+                    card.style.display = 'none'; 
+                });
+                if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+            }
+        }
+
+        const projectData = {
+            scent: {
+                title: "묘하당 무의식 아키타입 카드 데크",
+                category: "THE ARCHETYPE SYSTEM",
+                image: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.png",
+                description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
+                outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
+                sub1: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.png",
+                sub2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600"
+            },
+            luminary: {
+                title: "미요와 함께하는 타로 & 칵테일 테라피",
+                category: "TACTILE SENSORY EXPERIENCE",
+                image: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
+                description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
+                outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
+                sub1: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
+                sub2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            const titleEl = document.getElementById('modal-title');
+            const catEl = document.getElementById('modal-category');
+            const imgEl = document.getElementById('modal-image');
+            const descEl = document.getElementById('modal-description');
+            const sub1El = document.getElementById('modal-subimage-1');
+            const sub2El = document.getElementById('modal-subimage-2');
+
+            if (titleEl) titleEl.innerText = data.title;
+            if (catEl) catEl.innerText = data.category;
+            if (imgEl) imgEl.src = data.image;
+            if (descEl) descEl.innerText = data.description;
+            if (sub1El) sub1El.src = data.sub1;
+            if (sub2El) sub2El.src = data.sub2;
+
+            const outcomesList = document.getElementById('modal-outcomes');
+            if (outcomesList) {
+                outcomesList.innerHTML = '';
+                data.outcomes.forEach(out => {
+                    const li = document.createElement('li');
+                    li.innerText = `→ ${out}`;
+                    outcomesList.appendChild(li);
+                });
+            }
+
+            const modal = document.getElementById('project-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('translate-x-full');
+                }, 50);
+            }
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            if (modal) {
+                modal.classList.add('translate-x-full');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 500);
+            }
+        }
+
+        window.onload = function () {
+            navigateTo('readings'); 
+            setTimeout(() => navigateTo('home'), 50); 
+            initScrollAnimations();
+        }
+    </script>
+
+    <!-- -->
+    <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-serif">상담 신청</h2>
+                <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center hover:border-studio-accent transition-colors">✕</button>
+            </div>
+            
+            <form id="applyForm" class="space-y-4">
+                <input required placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required id="phone" required pattern="^010-\d{4}-\d{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <div>
+                    <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
+                    <div class="space-y-2 text-sm">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent" required> 타로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 진로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 인간관계(연애)</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 기타</label>
+                    </div>
+                </div>
+                <label class="flex items-start gap-2 text-xs text-stone-500 cursor-pointer pt-2">
+                    <input id="agree" type="checkbox" class="accent-studio-accent mt-0.5" required> 
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+                
+                <!-- Feedback message element (replaces alert window) -->
+                <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
+                    상담 신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다!
+                </div>
+                
+                <button type="submit" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- -->
+    <script>
+        function openApplyModal(){
+            const m = document.getElementById('apply-modal');
+            const successMsg = document.getElementById('apply-success-msg');
+            if (successMsg) successMsg.classList.add('hidden');
+            m.classList.remove('hidden');
+            setTimeout(()=>m.classList.remove('translate-x-full'), 10);
+            document.body.style.overflow='hidden';
+        }
+        function closeApplyModal(){
+            const m = document.getElementById('apply-modal');
+            m.classList.add('translate-x-full');
+            setTimeout(()=>m.classList.add('hidden'), 500);
+            document.body.style.overflow='';
+        }
+        document.addEventListener('submit', e => {
+            if(e.target.id === 'applyForm'){
+                e.preventDefault();
+                const successMsg = document.getElementById('apply-success-msg');
+                if (successMsg) {
+                    successMsg.classList.remove('hidden');
+                    setTimeout(() => {
+                        e.target.reset();
+                        closeApplyModal();
+                    }, 2500);
+                } else {
+                    closeApplyModal();
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const phone = document.getElementById('phone');
+            if(phone){
+                phone.addEventListener('input', e => {
+                    let v = e.target.value.replace(/\D/g,'').slice(0,11);
+                    if(v.length > 3 && v.length <= 7) v = v.slice(0,3)+'-'+v.slice(3);
+                    else if(v.length > 7) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+                    e.target.value = v;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
