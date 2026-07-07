@@ -74,7 +74,6 @@
 </head>
 <body class="bg-studio-lightBg text-studio-lightText dark:bg-studio-darkBg dark:text-studio-darkText font-sans transition-colors duration-500 overflow-x-hidden antialiased">
 
-    <!-- -->
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 border-b border-studio-lightText/10 dark:border-studio-darkText/10 bg-studio-lightBg/80 dark:bg-studio-darkBg/80 backdrop-blur-md transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -100,7 +99,6 @@
     <!-- Main SPA View Wrapper -->
     <main class="pt-24 min-h-[calc(100vh-200px)]">
 
-        <!-- -->
         <!-- ========================================== -->
         <!-- VIEW: HOME (HERO SECTION)                  -->
         <!-- ========================================== -->
@@ -149,7 +147,6 @@
             </section>
         </div>
 
-        <!-- -->
         <!-- ========================================== -->
         <!-- VIEW: READINGS                             -->
         <!-- ========================================== -->
@@ -204,7 +201,6 @@
             </section>
         </div>
 
-        <!-- -->
         <!-- ========================================== -->
         <!-- VIEW: PHILOSOPHY                           -->
         <!-- ========================================== -->
@@ -220,7 +216,6 @@
                     </div>
                 </div>
                 <div class="lg:col-span-7 space-y-8 font-light leading-relaxed text-stone-600 dark:text-stone-400">
-                    <!-- 문단간 위아래 간격을 좁게 정렬하기 위해 내부 wrapper 생성 -->
                     <div class="space-y-2.5 text-lg text-justify keep-all">
                         <p class="lg:whitespace-nowrap">
                             묘하당은 타로를 미래를 맞히는 도구가 아니라, 내면과 삶의 흐름을 이해하기 위한 언어로 해석합니다.
@@ -312,10 +307,10 @@
                 <p class="text-xs text-stone-500 font-light max-w-[280px]">당신의 숨겨진 본질적 강점을 기획하고, 주권적인 인격체로서 매일의 기회를 스스로 설계하도록 돕습니다.</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-xs font-semibold tracking-wider uppercase">
+            <div class="text-left md:text-right text-xs font-semibold tracking-wider uppercase">
                 <div class="space-y-2">
-                    <span class="text-[9px] font-mono text-studio-accent">CREATIVE STUDIO</span>
-                    <div class="flex flex-col space-y-1.5 font-light normal-case">
+                    <span class="text-[9px] font-mono text-studio-accent block">CREATIVE STUDIO</span>
+                    <div class="flex flex-col items-start md:items-end space-y-1.5 font-light normal-case">
                         <a href="javascript:void(0)" onclick="navigateTo('philosophy')" class="hover:text-studio-accent transition-colors">묘하당 매니페스토</a>
                         <a href="javascript:void(0)" onclick="navigateTo('process')" class="hover:text-studio-accent transition-colors">카운셀링 프로세스</a>
                     </div>
@@ -325,7 +320,6 @@
 
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center border-t border-studio-lightText/5 dark:border-studio-darkText/5 pt-8 mt-12 text-[10px] font-mono tracking-widest text-stone-400">
             <div>© 2026 MYOHADANG ARCHETYPE ALL RIGHTS RESERVED.</div>
-            <div class="mt-4 sm:mt-0">DESIGNED TO AWAKEN TRUE POTENTIALS</div>
         </div>
     </footer>
 
@@ -390,7 +384,6 @@
         </div>
     </div>
 
-    <!-- -->
     <script>
         function navigateTo(pageId) {
             window.scrollTo({ top: 0, behavior: 'instant' });
@@ -682,7 +675,7 @@
         }
     </script>
 
-    <!-- -->
+    <!-- Apply Modal -->
     <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
         <div class="p-8">
             <div class="flex justify-between items-center mb-6">
@@ -691,17 +684,17 @@
             </div>
             
             <form id="applyForm" class="space-y-4">
-                <input required placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required id="phone" required pattern="^010-\d{4}-\d{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="phone" id="phone" required pattern="^010-\d{4}-\d{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <div>
                     <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
                     <div class="space-y-2 text-sm">
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent" required> 타로</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 진로</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 인간관계(연애)</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" class="accent-studio-accent"> 기타</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="타로" class="accent-studio-accent" required> 타로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="진로" class="accent-studio-accent"> 진로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="인간관계(연애)" class="accent-studio-accent"> 인간관계(연애)</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="기타" class="accent-studio-accent"> 기타</label>
                     </div>
                 </div>
                 <label class="flex items-start gap-2 text-xs text-stone-500 cursor-pointer pt-2">
@@ -714,13 +707,16 @@
                     상담 신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다!
                 </div>
                 
-                <button type="submit" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
+                <button type="submit" id="submitBtn" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
             </form>
         </div>
     </div>
 
-    <!-- -->
+    <!-- Script Section for Google Sheets Connection -->
     <script>
+        // ⚠️ 아래 빈칸에 복사해 두신 Google Web App URL 주소를 붙여넣어 주세요.
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiPliW6QR2LzHKOEoLG9s2ivivq4Vx6AYGI-xKzj_cdB8HNPLCBk4wkGafj7jPbZK4/exec';
+
         function openApplyModal(){
             const m = document.getElementById('apply-modal');
             const successMsg = document.getElementById('apply-success-msg');
@@ -729,26 +725,58 @@
             setTimeout(()=>m.classList.remove('translate-x-full'), 10);
             document.body.style.overflow='hidden';
         }
+
         function closeApplyModal(){
             const m = document.getElementById('apply-modal');
             m.classList.add('translate-x-full');
             setTimeout(()=>m.classList.add('hidden'), 500);
             document.body.style.overflow='';
         }
-        document.addEventListener('submit', e => {
-            if(e.target.id === 'applyForm'){
-                e.preventDefault();
-                const successMsg = document.getElementById('apply-success-msg');
+
+        document.getElementById('applyForm').addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('apply-success-msg');
+            
+            // 전송 중 중복 클릭 및 입력 방지
+            submitBtn.disabled = true;
+            submitBtn.innerText = "전송 중...";
+
+            // 폼 데이터를 URL 쿼리 형식으로 전환 (CORS 차단 방지 및 수신 안정성 확보)
+            const formData = new FormData(form);
+            
+            // 스프레드시트 배포 주소로 전송
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // 브라우저 CORS 경고를 우회하여 데이터만 안정적으로 전달
+            })
+            .then(() => {
+                // 성공 메시지 출력
                 if (successMsg) {
                     successMsg.classList.remove('hidden');
-                    setTimeout(() => {
-                        e.target.reset();
-                        closeApplyModal();
-                    }, 2500);
-                } else {
-                    closeApplyModal();
                 }
-            }
+                
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "신청하기";
+                    closeApplyModal();
+                }, 2500);
+            })
+            .catch(err => {
+                console.error("데이터 전송 중 오류 발생:", err);
+                submitBtn.disabled = false;
+                submitBtn.innerText = "신청하기";
+                
+                // 에러 발생하더라도 사용자에게 예외 처리 알림을 띄우는 예비 안전장치
+                if (successMsg) {
+                    successMsg.innerText = "안정적인 전송을 위해 주소를 확인해 주세요.";
+                    successMsg.classList.remove('hidden');
+                }
+            });
         });
     </script>
     <script>
