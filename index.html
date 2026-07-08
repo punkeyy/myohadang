@@ -119,7 +119,7 @@
                             한 단계 더 선명하고 주체적인 선택의 기준을 정립하는 프리미엄 자아 분석 프로젝트입니다.
                         </p>
                         <div class="pt-4 flex flex-wrap gap-4">
-                            <a href="javascript:void(0)" onclick="navigateTo('readings')" class="px-8 py-4 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-semibold uppercase tracking-wider rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-black/5">
+                            <a href="javascript:void(0)" onclick="navigateTo('readings')" class="magnetic-item px-8 py-4 bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-semibold uppercase tracking-wider rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-black/5">
                                 시작하기 (Readings)
                                 <span class="inline-block transform group-hover:translate-x-1 transition-transform">→</span>
                             </a>
@@ -187,15 +187,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
                         <div class="portfolio-card space-y-4 select-none">
                             <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
-                                <!-- 묘하당 아키타입 데크 카드 업로드 이미지 연동 (URI 인코딩 적용) - 더 이상 클릭 불가 -->
-                                <img src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                                <!-- 묘하당 아키타입 데크 로컬 이미지 (Canvas 프리뷰 시 Unsplash 전용 타로카드로 자동 페일오버) -->
+                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
                             </div>
                         </div>
 
                         <div class="portfolio-card space-y-4 md:mt-24 select-none">
                             <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
-                                <!-- 타로 칵테일 캐릭터 업로드 이미지 연동 (URI 인코딩 적용) - 더 이상 클릭 불가 -->
-                                <img src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
+                                <!-- 타로 칵테일 캐릭터 로컬 이미지 (Canvas 프리뷰 시 Unsplash 고양이 칵테일로 자동 페일오버) -->
+                                <img src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -787,6 +787,28 @@
                     });
                 });
             }
+
+            // --- 🖼️ 스마트 이미지 하이브리드 로더 감지 로직 ---
+            const fallbackMap = {
+                'tarot_deck': 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1000', // 로컬 엑박 시 대체할 오렌지 네온 감성 우주/타로 타일
+                'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' // 로컬 엑박 시 대체할 귀여운 고양이 치유 무드
+            };
+
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const src = img.getAttribute('src');
+                if (!src) return;
+
+                // 브라우저 샌드박스 보안으로 로컬 파일을 열지 못할 때 고품질 컨셉 아트로 실시간 대체 작동
+                img.onerror = () => {
+                    if (src.includes('09_22_52') || src.includes('%EB%85%84')) {
+                        img.src = fallbackMap['tarot_deck'];
+                    } else if (src.includes('08_44_21')) {
+                        img.src = fallbackMap['cocktail_cat'];
+                    }
+                    img.onerror = null; // 무한루프 방지
+                };
+            });
         });
 
         // --- 페이지 첫 로드 실행 부트스트랩 ---
