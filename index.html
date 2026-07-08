@@ -185,15 +185,23 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                        <div class="portfolio-card space-y-4">
-                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none pointer-events-none">
-                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.png" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                        <div class="portfolio-card space-y-4 cursor-pointer" onclick="openProjectModal('scent')">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none">
+                                <!-- 묘하당 아키타입 데크 카드 이미지 웹 Fallback -->
+                                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=1000" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="px-4 py-2 bg-white/95 text-black text-xs font-semibold rounded-full shadow-md">자세히 보기</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="portfolio-card space-y-4 md:mt-24">
-                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none pointer-events-none">
-                                <img src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
+                        <div class="portfolio-card space-y-4 md:mt-24 cursor-pointer" onclick="openProjectModal('luminary')">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none">
+                                <!-- 타로 칵테일 이미지 웹 Fallback -->
+                                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=1000" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="px-4 py-2 bg-white/95 text-black text-xs font-semibold rounded-full shadow-md">자세히 보기</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -248,7 +256,7 @@
             <section class="py-24 bg-stone-100 dark:bg-[#111110] border-t border-b border-studio-lightText/10 dark:border-studio-darkText/10 transition-colors duration-500">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="mb-16 text-center max-w-2xl mx-auto space-y-4">
-                        <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">OUR CAPABILITIES</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">FLOW TO CHANCE PROJECT</span>
                         <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-tight md:whitespace-nowrap">묘하당은 '이해'에서 끝나지 않습니다.</h2>
                         <p class="text-stone-500 text-sm font-light">내면을 발견하고, 삶에 적용하는 과정까지 함께합니다.</p>
                     </div>
@@ -258,12 +266,12 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-6">
                                     <span class="font-mono text-xs opacity-40">01 /</span>
-                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">무의식 상징 매핑 (Symbology Session)</h3>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">1회차. READ MY FLOW</h3>
                                 </div>
                                 <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
                             </div>
                             <div id="acc-content-1" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
-                                타로 카드에 담긴 상징을 통해 지금의 마음을 함께 들여다봅니다.<br>반복되는 감정과 관계의 흐름, 나를 붙잡고 있는 패턴을 하나씩 살펴보며 현재의 내면을 이해합니다.
+                                나의 기질과 방해요소를 이해하고, 지금 내가 어떤 흐름 위에 있는지 살펴봅니다.
                             </div>
                         </div>
 
@@ -271,12 +279,12 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-6">
                                     <span class="font-mono text-xs opacity-40">02 /</span>
-                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">기질 이해 (Data Matching)</h3>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">2회차. FIND MY DIRECTION</h3>
                                 </div>
                                 <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
                             </div>
                             <div id="acc-content-2" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
-                                상담 내용을 바탕으로 타고난 기질과 성향을 깊이 분석합니다.<br>나의 강점은 무엇인지, 어떤 상황에서 쉽게 흔들리는지 함께 살펴보며 나에게 맞는 방향을 찾아갑니다.
+                                타로로 확인한 가능성을 바탕으로, 나에게 맞는 실제 방향을 함께 정리합니다.
                             </div>
                         </div>
 
@@ -284,12 +292,12 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-6">
                                     <span class="font-mono text-xs opacity-40">03 /</span>
-                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">정서 카운슬링 (Tuning Session)</h3>
+                                    <h3 class="text-xl sm:text-2xl font-serif group-hover:text-studio-accent transition-colors">3회차. CATCH MY CHANCE</h3>
                                 </div>
                                 <div class="accordion-icon transform transition-transform duration-300 text-lg">↓</div>
                             </div>
                             <div id="acc-content-3" class="hidden mt-4 pl-14 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-2xl font-light">
-                                발견한 내용을 삶 속에서 자연스럽게 실천할 수 있도록 함께 이야기 나눕니다.<br>작은 변화가 오래 이어질 수 있는 방향을 함께 찾아갑니다.
+                                중요한 순간을 피하지 않고 붙잡을 수 있도록, 현실에서 실천하고 노력할 수 있는 행동을 계획합니다.
                             </div>
                         </div>
                     </div>
@@ -304,17 +312,7 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
             <div class="space-y-3">
                 <span class="font-serif text-3xl font-bold tracking-tight">묘하당<span class="text-studio-accent">.</span></span>
-                <p class="text-xs text-stone-500 font-light max-w-[280px]">당신의 숨겨진 본질적 강점을 기획하고, 주권적인 인격체로서 매일의 기회를 스스로 설계하도록 돕습니다.</p>
-            </div>
-
-            <div class="text-left md:text-right text-xs font-semibold tracking-wider uppercase">
-                <div class="space-y-2">
-                    <span class="text-[9px] font-mono text-studio-accent block">CREATIVE STUDIO</span>
-                    <div class="flex flex-col items-start md:items-end space-y-1.5 font-light normal-case">
-                        <a href="javascript:void(0)" onclick="navigateTo('philosophy')" class="hover:text-studio-accent transition-colors">묘하당 매니페스토</a>
-                        <a href="javascript:void(0)" onclick="navigateTo('process')" class="hover:text-studio-accent transition-colors">카운셀링 프로세스</a>
-                    </div>
-                </div>
+                <p class="text-xs text-stone-500 font-light max-w-[500px]">묘하당은 타로를 통해 오늘의 흐름을 읽고, 상담을 통해 그 흐름을 나의 선택과 가능성, 자기확신으로 연결하는 체험형 프로젝트입니다.</p>
             </div>
         </div>
 
@@ -343,7 +341,7 @@
             </div>
 
             <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900 relative">
-                <img id="modal-image" src="" alt="Case Study Hero" class="w-full h-full object-cover">
+                <img id="modal-image" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=1000" alt="Case Study Hero" class="w-full h-full object-cover">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-sm">
@@ -365,10 +363,10 @@
                 <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-1" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-1" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=600" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-2" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-2" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
             </div>
@@ -601,19 +599,19 @@
             scent: {
                 title: "묘하당 무의식 아키타입 카드 데크",
                 category: "THE ARCHETYPE SYSTEM",
-                image: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.png",
+                image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=1000",
                 description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
                 outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
-                sub1: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.png",
+                sub1: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=600",
                 sub2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600"
             },
             luminary: {
                 title: "미요와 함께하는 타로 & 칵테일 테라피",
                 category: "TACTILE SENSORY EXPERIENCE",
-                image: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
+                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=1000",
                 description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
                 outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
-                sub1: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
+                sub1: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=600",
                 sub2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"
             }
         };
@@ -633,8 +631,8 @@
             if (catEl) catEl.innerText = data.category;
             if (imgEl) imgEl.src = data.image;
             if (descEl) descEl.innerText = data.description;
-            if (sub1El) sub1El.src = data.sub1;
-            if (sub2El) sub2El.src = data.sub2;
+            if (sub1El) sub1El.src = data.sub1 || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            if (sub2El) sub2El.src = data.sub2 || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
             const outcomesList = document.getElementById('modal-outcomes');
             if (outcomesList) {
@@ -686,8 +684,9 @@
             <form id="applyForm" class="space-y-4">
                 <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required name="phone" id="phone" required pattern="^010-\d{4}-\d{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <!-- Improved regex compatible pattern matching [0-9] -->
+                <input required name="phone" id="phone" pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input name="email" type="email" placeholder="이메일 (선택사항)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <div>
                     <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
                     <div class="space-y-2 text-sm">
@@ -714,7 +713,6 @@
 
     <!-- Script Section for Google Sheets Connection -->
     <script>
-        // ⚠️ 아래 빈칸에 복사해 두신 Google Web App URL 주소를 붙여넣어 주세요.
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiPliW6QR2LzHKOEoLG9s2ivivq4Vx6AYGI-xKzj_cdB8HNPLCBk4wkGafj7jPbZK4/exec';
 
         function openApplyModal(){
@@ -744,15 +742,15 @@
             submitBtn.disabled = true;
             submitBtn.innerText = "전송 중...";
 
-            // 폼 데이터를 URLSearchParams 형식으로 전환 (Google Apps Script 수신율 극대화)
+            // 폼 데이터를 URLSearchParams 형식 및 문자열 직렬화로 가공 (구글 Apps Script 호환 극대화)
             const formData = new FormData(form);
             const searchParams = new URLSearchParams(formData);
             
             // 스프레드시트 배포 주소로 전송
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                body: searchParams,
-                mode: 'no-cors', // 브라우저 CORS 경고를 우회하여 데이터만 안정적으로 전달
+                body: searchParams.toString(),
+                mode: 'no-cors', // 브라우저 CORS 제한 우회
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
@@ -760,6 +758,7 @@
             .then(() => {
                 // 성공 메시지 출력
                 if (successMsg) {
+                    successMsg.innerText = "상담 신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다!";
                     successMsg.classList.remove('hidden');
                 }
                 
@@ -775,9 +774,8 @@
                 submitBtn.disabled = false;
                 submitBtn.innerText = "신청하기";
                 
-                // 에러 발생하더라도 사용자에게 예외 처리 알림을 띄우는 예비 안전장치
                 if (successMsg) {
-                    successMsg.innerText = "안정적인 전송을 위해 주소를 확인해 주세요.";
+                    successMsg.innerText = "서버 통신에 일시적 지연이 발생했습니다. 새로고침 후 다시 시도해 주세요.";
                     successMsg.classList.remove('hidden');
                 }
             });
