@@ -185,23 +185,17 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                        <div class="portfolio-card space-y-4 cursor-pointer" onclick="openProjectModal('scent')">
-                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none">
-                                <!-- 묘하당 아키타입 데크 카드 업로드 이미지 연동 -->
-                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="px-4 py-2 bg-white/95 text-black text-xs font-semibold rounded-full shadow-md">자세히 보기</span>
-                                </div>
+                        <div class="portfolio-card space-y-4 select-none">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
+                                <!-- 묘하당 아키타입 데크 카드 업로드 이미지 연동 (URI 인코딩 적용) - 더 이상 클릭 불가 -->
+                                <img src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
                             </div>
                         </div>
 
-                        <div class="portfolio-card space-y-4 md:mt-24 cursor-pointer" onclick="openProjectModal('luminary')">
-                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md select-none">
-                                <!-- 타로 칵테일 캐릭터 업로드 이미지 연동 -->
-                                <img src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="px-4 py-2 bg-white/95 text-black text-xs font-semibold rounded-full shadow-md">자세히 보기</span>
-                                </div>
+                        <div class="portfolio-card space-y-4 md:mt-24 select-none">
+                            <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
+                                <!-- 타로 칵테일 캐릭터 업로드 이미지 연동 (URI 인코딩 적용) - 더 이상 클릭 불가 -->
+                                <img src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -321,7 +315,7 @@
         </div>
     </footer>
 
-    <!-- Case Study Slideout Modal -->
+    <!-- Case Study Slideout Modal (구조는 유지하되 더 이상 Readings 이미지 클릭으로 열리지 않음) -->
     <div id="project-modal" class="fixed inset-y-0 right-0 w-full lg:w-[60vw] bg-studio-lightBg dark:bg-studio-darkBg border-l border-studio-lightText/10 dark:border-studio-darkText/10 z-50 transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl overflow-y-auto hidden">
         <div class="sticky top-0 right-0 p-6 flex justify-between items-center bg-studio-lightBg/90 dark:bg-studio-darkBg/90 backdrop-blur-sm border-b border-studio-lightText/5 dark:border-studio-darkText/5 z-10">
             <span class="text-xs font-mono text-studio-accent uppercase tracking-widest" id="modal-category">01 // BRANDING IDENTITY</span>
@@ -363,10 +357,10 @@
                 <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-1" src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-1" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-2" src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-2" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
             </div>
@@ -382,7 +376,49 @@
         </div>
     </div>
 
+    <!-- Apply Modal -->
+    <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-serif">3회 체험 프로그램 신청</h2>
+                <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center hover:border-studio-accent transition-colors">✕</button>
+            </div>
+            
+            <form id="applyForm" class="space-y-4">
+                <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="phone" id="phone" required pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <div>
+                    <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
+                    <div class="space-y-2 text-sm">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="타로" class="accent-studio-accent" required> 타로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="진로" class="accent-studio-accent"> 진로</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="인간관계(연애)" class="accent-studio-accent"> 인간관계(연애)</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="기타" class="accent-studio-accent"> 기타</label>
+                    </div>
+                </div>
+                <label class="flex items-start gap-2 text-xs text-stone-500 cursor-pointer pt-2">
+                    <input id="agree" type="checkbox" class="accent-studio-accent mt-0.5" required> 
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+                
+                <!-- Feedback message element (replaces alert window) -->
+                <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
+                    3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!
+                </div>
+                
+                <button type="submit" id="submitBtn" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Section for Google Sheets Connection and Unified App Logic -->
     <script>
+        // --- 글로벌 상수 설정 ---
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiPliW6QR2LzHKOEoLG9s2ivivq4Vx6AYGI-xKzj_cdB8HNPLCBk4wkGafj7jPbZK4/exec';
+
+        // --- 페이지 네비게이션 로직 ---
         function navigateTo(pageId) {
             window.scrollTo({ top: 0, behavior: 'instant' });
 
@@ -422,6 +458,7 @@
             }
         }
 
+        // --- GSAP 스크롤 트리거 애니메이션 ---
         function initScrollAnimations() {
             if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
             try {
@@ -447,6 +484,7 @@
             }
         }
 
+        // --- 아코디언 로직 ---
         function toggleAccordion(id) {
             const content = document.getElementById(`acc-content-${id}`);
             const item = content.closest('.accordion-item');
@@ -468,6 +506,7 @@
             }
         }
 
+        // --- Readings 상세 보기 탭 데이터 구성 ---
         const readingDetails = {
             all: null,
             temperament: {
@@ -538,6 +577,7 @@
             }
         };
 
+        // --- Readings 필터링 제어 로직 ---
         function filterTab(category) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = "tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors";
@@ -595,27 +635,29 @@
             }
         }
 
+        // --- 개별 프로젝트 모달 세부 데이터 구성 ---
         const projectData = {
             scent: {
                 title: "묘하당 무의식 아키타입 카드 데크",
                 category: "THE ARCHETYPE SYSTEM",
-                image: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg",
+                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
                 description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
                 outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
-                sub1: "ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg",
-                sub2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600"
+                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
+                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png"
             },
             luminary: {
                 title: "미요와 함께하는 타로 & 칵테일 테라피",
                 category: "TACTILE SENSORY EXPERIENCE",
-                image: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
+                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
                 description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
                 outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
-                sub1: "ChatGPT Image 2026년 7월 7일 오전 08_44_21.png",
-                sub2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"
+                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
+                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg"
             }
         };
 
+        // --- 상세 보기 모달 제어 로직 ---
         function openProjectModal(projectId) {
             const data = projectData[projectId];
             if (!data) return;
@@ -666,54 +708,7 @@
             }
         }
 
-        window.onload = function () {
-            navigateTo('readings'); 
-            setTimeout(() => navigateTo('home'), 50); 
-            initScrollAnimations();
-        }
-    </script>
-
-    <!-- Apply Modal -->
-    <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
-        <div class="p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-serif">3회 체험 프로그램 신청</h2>
-                <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center hover:border-studio-accent transition-colors">✕</button>
-            </div>
-            
-            <form id="applyForm" class="space-y-4">
-                <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required name="phone" id="phone" required pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <div>
-                    <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
-                    <div class="space-y-2 text-sm">
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="타로" class="accent-studio-accent" required> 타로</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="진로" class="accent-studio-accent"> 진로</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="인간관계(연애)" class="accent-studio-accent"> 인간관계(연애)</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="기타" class="accent-studio-accent"> 기타</label>
-                    </div>
-                </div>
-                <label class="flex items-start gap-2 text-xs text-stone-500 cursor-pointer pt-2">
-                    <input id="agree" type="checkbox" class="accent-studio-accent mt-0.5" required> 
-                    <span>개인정보 수집 및 이용에 동의합니다.</span>
-                </label>
-                
-                <!-- Feedback message element (replaces alert window) -->
-                <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
-                    3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!
-                </div>
-                
-                <button type="submit" id="submitBtn" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Script Section for Google Sheets Connection -->
-    <script>
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiPliW6QR2LzHKOEoLG9s2ivivq4Vx6AYGI-xKzj_cdB8HNPLCBk4wkGafj7jPbZK4/exec';
-
+        // --- 신청하기 모달 제어 로직 ---
         function openApplyModal(){
             const m = document.getElementById('apply-modal');
             const successMsg = document.getElementById('apply-success-msg');
@@ -730,69 +725,85 @@
             document.body.style.overflow='';
         }
 
-        document.getElementById('applyForm').addEventListener('submit', e => {
-            e.preventDefault();
-            
-            const form = e.target;
-            const submitBtn = document.getElementById('submitBtn');
-            const successMsg = document.getElementById('apply-success-msg');
-            
-            // 전송 중 중복 클릭 및 입력 방지
-            submitBtn.disabled = true;
-            submitBtn.innerText = "전송 중...";
-
-            // 폼 데이터를 URLSearchParams 형식으로 전환 (Google Apps Script 수신율 극대화)
-            const formData = new FormData(form);
-            const searchParams = new URLSearchParams(formData);
-            
-            // 스프레드시트 배포 주소로 전송
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                body: searchParams.toString(),
-                mode: 'no-cors', // 브라우저 CORS 경고를 우회하여 데이터만 안정적으로 전달
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
-            .then(() => {
-                // 성공 메시지 출력
-                if (successMsg) {
-                    successMsg.innerText = "3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!";
-                    successMsg.classList.remove('hidden');
-                }
-                
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "신청하기";
-                    closeApplyModal();
-                }, 2500);
-            })
-            .catch(err => {
-                console.error("데이터 전송 중 오류 발생:", err);
-                submitBtn.disabled = false;
-                submitBtn.innerText = "신청하기";
-                
-                // 에러 발생하더라도 사용자에게 예외 처리 알림을 띄우는 예비 안전장치
-                if (successMsg) {
-                    successMsg.innerText = "서버 통신에 일시적 지연이 발생했습니다. 새로고침 후 다시 시도해 주세요.";
-                    successMsg.classList.remove('hidden');
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded',()=>{
+        // --- 양식 입력 필드 포맷팅 및 구글 스프레드시트 비동기 접수 로직 ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 연락처 하이픈 자동 마스킹 및 실시간 포맷팅 처리
             const phone = document.getElementById('phone');
-            if(phone){
+            if (phone) {
                 phone.addEventListener('input', e => {
-                    let v = e.target.value.replace(/\D/g,'').slice(0,11);
-                    if(v.length > 3 && v.length <= 7) v = v.slice(0,3)+'-'+v.slice(3);
-                    else if(v.length > 7) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+                    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+                    if (v.length > 3 && v.length <= 7) v = v.slice(0, 3) + '-' + v.slice(3);
+                    else if (v.length > 7) v = v.slice(0, 3) + '-' + v.slice(3, 7) + '-' + v.slice(7);
                     e.target.value = v;
                 });
             }
+
+            // 구글 시트 전송 핸들러 바인딩
+            const applyForm = document.getElementById('applyForm');
+            if (applyForm) {
+                applyForm.addEventListener('submit', e => {
+                    e.preventDefault();
+                    
+                    const form = e.target;
+                    const submitBtn = document.getElementById('submitBtn');
+                    const successMsg = document.getElementById('apply-success-msg');
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = "전송 중...";
+
+                    const formData = new FormData(form);
+                    const searchParams = new URLSearchParams(formData);
+                    
+                    fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        body: searchParams.toString(),
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
+                    .then(() => {
+                        if (successMsg) {
+                            successMsg.innerText = "3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!";
+                            successMsg.classList.remove('hidden');
+                        }
+                        
+                        setTimeout(() => {
+                            form.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = "신청하기";
+                            closeApplyModal();
+                        }, 2500);
+                    })
+                    .catch(err => {
+                        console.error("데이터 전송 중 오류 발생:", err);
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = "신청하기";
+                        
+                        if (successMsg) {
+                            successMsg.innerText = "서버 통신에 일시적 지연이 발생했습니다. 새로고침 후 다시 시도해 주세요.";
+                            successMsg.classList.remove('hidden');
+                        }
+                    });
+                });
+            }
         });
+
+        // --- 페이지 첫 로드 실행 부트스트랩 ---
+        window.onload = function () {
+            navigateTo('readings'); 
+            setTimeout(() => navigateTo('home'), 50); 
+            initScrollAnimations();
+        }
+
+        // --- ⚠️ 매우 중요: Blob 및 보안 샌드박스 환경 우회를 위한 명시적 글로벌 바인딩 ---
+        window.navigateTo = navigateTo;
+        window.toggleAccordion = toggleAccordion;
+        window.filterTab = filterTab;
+        window.openProjectModal = openProjectModal;
+        window.closeProjectModal = closeProjectModal;
+        window.openApplyModal = openApplyModal;
+        window.closeApplyModal = closeApplyModal;
     </script>
 </body>
 </html>
