@@ -677,16 +677,15 @@
     <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
         <div class="p-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-serif">상담 신청</h2>
+                <h2 class="text-2xl font-serif">3회 체험 프로그램 신청</h2>
                 <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center hover:border-studio-accent transition-colors">✕</button>
             </div>
             
             <form id="applyForm" class="space-y-4">
                 <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <!-- Improved regex compatible pattern matching [0-9] -->
-                <input required name="phone" id="phone" pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input name="email" type="email" placeholder="이메일 (선택사항)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input required name="phone" id="phone" required pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <div>
                     <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
                     <div class="space-y-2 text-sm">
@@ -703,7 +702,7 @@
                 
                 <!-- Feedback message element (replaces alert window) -->
                 <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
-                    상담 신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다!
+                    3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!
                 </div>
                 
                 <button type="submit" id="submitBtn" class="w-full p-3 rounded-full bg-studio-lightText text-studio-lightBg dark:bg-studio-darkText dark:text-studio-darkBg text-xs font-bold uppercase tracking-widest hover:bg-studio-accent hover:text-white transition-colors duration-300">신청하기</button>
@@ -742,7 +741,7 @@
             submitBtn.disabled = true;
             submitBtn.innerText = "전송 중...";
 
-            // 폼 데이터를 URLSearchParams 형식 및 문자열 직렬화로 가공 (구글 Apps Script 호환 극대화)
+            // 폼 데이터를 URLSearchParams 형식으로 전환 (Google Apps Script 수신율 극대화)
             const formData = new FormData(form);
             const searchParams = new URLSearchParams(formData);
             
@@ -750,7 +749,7 @@
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 body: searchParams.toString(),
-                mode: 'no-cors', // 브라우저 CORS 제한 우회
+                mode: 'no-cors', // 브라우저 CORS 경고를 우회하여 데이터만 안정적으로 전달
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
@@ -758,7 +757,7 @@
             .then(() => {
                 // 성공 메시지 출력
                 if (successMsg) {
-                    successMsg.innerText = "상담 신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다!";
+                    successMsg.innerText = "3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!";
                     successMsg.classList.remove('hidden');
                 }
                 
@@ -774,6 +773,7 @@
                 submitBtn.disabled = false;
                 submitBtn.innerText = "신청하기";
                 
+                // 에러 발생하더라도 사용자에게 예외 처리 알림을 띄우는 예비 안전장치
                 if (successMsg) {
                     successMsg.innerText = "서버 통신에 일시적 지연이 발생했습니다. 새로고침 후 다시 시도해 주세요.";
                     successMsg.classList.remove('hidden');
