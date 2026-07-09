@@ -86,6 +86,7 @@
                 <a href="javascript:void(0)" id="nav-readings" onclick="navigateTo('readings')" class="hover:text-studio-accent transition-colors duration-300">Readings</a>
                 <a href="javascript:void(0)" id="nav-philosophy" onclick="navigateTo('philosophy')" class="hover:text-studio-accent transition-colors duration-300">Philosophy</a>
                 <a href="javascript:void(0)" id="nav-process" onclick="navigateTo('process')" class="hover:text-studio-accent transition-colors duration-300">Process</a>
+                <a href="javascript:void(0)" id="nav-event" onclick="navigateTo('event')" class="hover:text-studio-accent transition-colors duration-300">Event</a>
             </nav>
 
             <div class="flex items-center">
@@ -144,6 +145,14 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 홈화면 오른쪽 하단 문의사항 이메일 주소 -->
+                <div class="absolute bottom-4 right-6 text-right z-10 hidden sm:block">
+                    <span class="text-[9px] font-mono text-stone-400 block uppercase tracking-widest mb-1">EMAIL INQUIRY</span>
+                    <a href="mailto:meyohadang@gmail.com" class="font-sans text-xs text-studio-accent font-semibold border-b border-studio-accent/30 hover:border-studio-accent transition-all duration-300 pb-0.5">
+                        meyohadang@gmail.com
+                    </a>
+                </div>
             </section>
         </div>
 
@@ -187,14 +196,12 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
                         <div class="portfolio-card space-y-4 select-none">
                             <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
-                                <!-- 묘하당 아키타입 데크 로컬 이미지 (Canvas 프리뷰 시 Unsplash 전용 타로카드로 자동 페일오버) -->
-                                <img src="tarot1.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
                             </div>
                         </div>
 
                         <div class="portfolio-card space-y-4 md:mt-24 select-none">
                             <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
-                                <!-- 타로 칵테일 캐릭터 로컬 이미지 (Canvas 프리뷰 시 Unsplash 고양이 칵테일로 자동 페일오버) -->
                                 <img src="ChatGPT Image 2026년 7월 7일 오전 08_44_21.png" alt="미요와 함께 묘하당 타로 칵테일" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -299,6 +306,71 @@
             </section>
         </div>
 
+        <!-- ========================================== -->
+        <!-- VIEW: EVENT (오픈 기념 추첨 이벤트)       -->
+        <!-- ========================================== -->
+        <div id="page-event" class="page-view opacity-0 hidden">
+            <section class="py-24 px-6 max-w-7xl mx-auto space-y-16">
+                <div class="text-center max-w-2xl mx-auto space-y-4">
+                    <span class="text-xs font-mono uppercase tracking-widest text-studio-accent">SPECIAL POPUP EVENT</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-tight">묘하당 팝업 이벤트</h2>
+                    <p class="text-stone-600 dark:text-stone-400 text-sm font-light leading-relaxed keep-all">
+                        참여 후기를 작성해 주시거나, 묘하당 3회 체험 프로그램을 신청해 주신 분들에 한하여 <br class="hidden sm:block">
+                        추첨을 통해 일상과 내면의 깊이를 채워줄 특별한 선물을 전해드립니다.
+                    </p>
+                </div>
+
+                <!-- Prize Matrix Grid (상세 한 줄 묘사 문구 완벽 제거됨) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                    <!-- 1등 -->
+                    <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-accent/20 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
+                        <div class="absolute top-0 right-0 bg-studio-accent text-white dark:text-studio-darkBg text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">1ST</div>
+                        <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">1등</span>
+                        <h3 class="text-xl font-serif font-bold">맥북</h3>
+                    </div>
+                    <!-- 2등 -->
+                    <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
+                        <div class="absolute top-0 right-0 bg-stone-300 dark:bg-stone-700 text-stone-800 dark:text-stone-200 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">2ND</div>
+                        <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">2등</span>
+                        <h3 class="text-xl font-serif font-bold">애플워치</h3>
+                    </div>
+                    <!-- 3등 -->
+                    <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
+                        <div class="absolute top-0 right-0 bg-stone-300 dark:bg-stone-700 text-stone-800 dark:text-stone-200 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">3RD</div>
+                        <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">3등</span>
+                        <h3 class="text-lg font-serif font-bold leading-tight">백화점 상품권<br><span class="text-xs font-sans font-normal text-stone-500">(10만원)</span></h3>
+                    </div>
+                    <!-- 4등 -->
+                    <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
+                        <div class="absolute top-0 right-0 bg-stone-200/50 dark:bg-stone-800 text-stone-600 dark:text-stone-300 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">4TH</div>
+                        <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">4등</span>
+                        <h3 class="text-xl font-serif font-bold">치킨</h3>
+                    </div>
+                    <!-- 5등 -->
+                    <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
+                        <div class="absolute top-0 right-0 bg-stone-200/50 dark:bg-stone-800 text-stone-600 dark:text-stone-300 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">5TH</div>
+                        <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">5등</span>
+                        <h3 class="text-xl font-serif font-bold">아메리카노</h3>
+                    </div>
+                </div>
+
+                <!-- Inquiry Box -->
+                <div class="max-w-xl mx-auto p-8 rounded-3xl bg-studio-accent/5 border border-studio-accent/20 text-center space-y-5 shadow-sm">
+                    <h4 class="font-serif text-lg font-medium">CONTACT & INQUIRY</h4>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+                        이벤트 참여 방법, 추첨 일정 및 기타 궁금하신 모든 사항은<br>
+                        아래의 묘하당 공식 헬프 데스크로 편하게 이메일을 남겨주시면 정성껏 답변드리겠습니다.
+                    </p>
+                    <div class="pt-2">
+                        <span class="text-[10px] font-mono text-stone-400 block mb-1 uppercase tracking-widest">EMAIL INQUIRY</span>
+                        <a href="mailto:meyohadang@gmail.com" class="font-sans text-sm text-studio-accent font-semibold border-b border-studio-accent/40 hover:border-studio-accent transition-colors duration-300 pb-0.5">
+                            meyohadang@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <!-- Footer Section -->
@@ -315,7 +387,7 @@
         </div>
     </footer>
 
-    <!-- Case Study Slideout Modal (구조는 유지하되 더 이상 Readings 이미지 클릭으로 열리지 않음) -->
+    <!-- Case Study Slideout Modal -->
     <div id="project-modal" class="fixed inset-y-0 right-0 w-full lg:w-[60vw] bg-studio-lightBg dark:bg-studio-darkBg border-l border-studio-lightText/10 dark:border-studio-darkText/10 z-50 transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl overflow-y-auto hidden">
         <div class="sticky top-0 right-0 p-6 flex justify-between items-center bg-studio-lightBg/90 dark:bg-studio-darkBg/90 backdrop-blur-sm border-b border-studio-lightText/5 dark:border-studio-darkText/5 z-10">
             <span class="text-xs font-mono text-studio-accent uppercase tracking-widest" id="modal-category">01 // BRANDING IDENTITY</span>
@@ -357,10 +429,10 @@
                 <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-1" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-1" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-2" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-2" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
             </div>
@@ -520,7 +592,7 @@
                 `
             },
             nature: {
-                badge: "DISCOVER NATURE // 성향 발견",
+                badge: "DISCOVER PATH // 성향 발견",
                 title: "나의 성향을 발견하는 세 단계의 객관적 프로세스",
                 text: `
                     <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 1단계 - 타로카드 선택하기</p>
@@ -640,20 +712,20 @@
             scent: {
                 title: "묘하당 무의식 아키타입 카드 데크",
                 category: "THE ARCHETYPE SYSTEM",
-                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
+                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
                 description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
                 outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
-                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
-                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png"
+                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
+                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png"
             },
             luminary: {
                 title: "미요와 함께하는 타로 & 칵테일 테라피",
                 category: "TACTILE SENSORY EXPERIENCE",
-                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
+                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
                 description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
                 outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
-                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
-                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9B%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg"
+                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
+                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg"
             }
         };
 
@@ -790,8 +862,8 @@
 
             // --- 🖼️ 스마트 이미지 하이브리드 로더 감지 로직 ---
             const fallbackMap = {
-                'tarot_deck': 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1000', // 로컬 엑박 시 대체할 오렌지 네온 감성 우주/타로 타일
-                'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' // 로컬 엑박 시 대체할 귀여운 고양이 치유 무드
+                'tarot_deck': 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1000', 
+                'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' 
             };
 
             const images = document.querySelectorAll('img');
@@ -799,14 +871,13 @@
                 const src = img.getAttribute('src');
                 if (!src) return;
 
-                // 브라우저 샌드박스 보안으로 로컬 파일을 열지 못할 때 고품질 컨셉 아트로 실시간 대체 작동
                 img.onerror = () => {
                     if (src.includes('09_22_52') || src.includes('%EB%85%84')) {
                         img.src = fallbackMap['tarot_deck'];
                     } else if (src.includes('08_44_21')) {
                         img.src = fallbackMap['cocktail_cat'];
                     }
-                    img.onerror = null; // 무한루프 방지
+                    img.onerror = null; 
                 };
             });
         });
