@@ -461,6 +461,20 @@
                 <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input required name="phone" id="phone" required pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                
+                <!-- 추가된 날짜 및 시간 선택 필드 영역 -->
+                <div class="space-y-2">
+                    <p class="font-semibold text-xs uppercase tracking-wider">희망 상담 일정 선택</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="relative">
+                            <input type="date" required name="preferred_date" id="preferred_date" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent text-sm appearance-none" />
+                        </div>
+                        <div class="relative">
+                            <input type="time" required name="preferred_time" id="preferred_time" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent text-sm appearance-none" />
+                        </div>
+                    </div>
+                </div>
+
                 <div>
                     <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
                     <div class="space-y-2 text-sm">
