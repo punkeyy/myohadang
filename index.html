@@ -196,7 +196,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
                         <div class="portfolio-card space-y-4 select-none">
                             <div class="project-img-container aspect-[2/3] bg-stone-200 dark:bg-stone-900 overflow-hidden rounded-2xl relative shadow-md">
-                                <img src="ChatGPT Image 2026년 7월 6일 오후 09_22_52.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
+                                <img src="tarot1.jpg" alt="묘하당 아키타입 데크" class="w-full h-full object-cover">
                             </div>
                         </div>
 
@@ -429,7 +429,7 @@
                 <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-1" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img id="modal-subimage-1" src="tarot1.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
                         <img id="modal-subimage-2" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
@@ -707,15 +707,16 @@
             }
         }
 
+        // --- STREAMING_CHUNK: Updating JavaScript data models and image load fallbacks... ---
         // --- 개별 프로젝트 모달 세부 데이터 구성 ---
         const projectData = {
             scent: {
                 title: "묘하당 무의식 아키타입 카드 데크",
                 category: "THE ARCHETYPE SYSTEM",
-                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
+                image: "tarot1.jpg",
                 description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
                 outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
-                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg",
+                sub1: "tarot1.jpg",
                 sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png"
             },
             luminary: {
@@ -725,7 +726,7 @@
                 description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
                 outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
                 sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
-                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%206%EC%9D%BC%20%EC%98%A4%ED%9B%84%2009_22_52.jpg"
+                sub2: "tarot1.jpg"
             }
         };
 
@@ -862,7 +863,7 @@
 
             // --- 🖼️ 스마트 이미지 하이브리드 로더 감지 로직 ---
             const fallbackMap = {
-                'tarot_deck': 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1000', 
+                'tarot_deck': 'tarot1.jpg', 
                 'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' 
             };
 
@@ -872,7 +873,7 @@
                 if (!src) return;
 
                 img.onerror = () => {
-                    if (src.includes('09_22_52') || src.includes('%EB%85%84')) {
+                    if (src.includes('09_22_52') || src.includes('%EB%85%84') || src.includes('tarot1')) {
                         img.src = fallbackMap['tarot_deck'];
                     } else if (src.includes('08_44_21')) {
                         img.src = fallbackMap['cocktail_cat'];
