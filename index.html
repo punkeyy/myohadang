@@ -146,7 +146,6 @@
                     </div>
                 </div>
 
-                <!-- 홈화면 오른쪽 하단 문의사항 이메일 주소 -->
                 <div class="absolute bottom-4 right-6 text-right z-10 hidden sm:block">
                     <span class="text-[9px] font-mono text-stone-400 block uppercase tracking-widest mb-1">EMAIL INQUIRY</span>
                     <a href="mailto:meyohadang@gmail.com" class="font-sans text-xs text-studio-accent font-semibold border-b border-studio-accent/30 hover:border-studio-accent transition-all duration-300 pb-0.5">
@@ -188,7 +187,6 @@
                             </div>
                             <h3 id="info-title" class="text-2xl md:text-3xl font-serif font-light text-studio-lightText dark:text-studio-darkText">기질이 우리에게 미치는 영향</h3>
                             <div id="info-desc" class="text-stone-600 dark:text-stone-400 text-sm md:text-base leading-relaxed space-y-4 font-light text-justify">
-                                <!-- Filled by JS -->
                             </div>
                         </div>
                     </div>
@@ -322,31 +320,26 @@
 
                 <!-- Prize Matrix Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-                    <!-- 1등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-accent/20 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
                         <div class="absolute top-0 right-0 bg-studio-accent text-white dark:text-studio-darkBg text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">1ST</div>
                         <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">1등</span>
                         <h3 class="text-xl font-serif font-bold">맥북</h3>
                     </div>
-                    <!-- 2등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
                         <div class="absolute top-0 right-0 bg-stone-300 dark:bg-stone-700 text-stone-800 dark:text-stone-200 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">2ND</div>
                         <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">2등</span>
                         <h3 class="text-xl font-serif font-bold">애플워치</h3>
                     </div>
-                    <!-- 3등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
                         <div class="absolute top-0 right-0 bg-stone-300 dark:bg-stone-700 text-stone-800 dark:text-stone-200 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">3RD</div>
                         <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">3등</span>
                         <h3 class="text-lg font-serif font-bold leading-tight">백화점 상품권<br><span class="text-xs font-sans font-normal text-stone-500">(10만원)</span></h3>
                     </div>
-                    <!-- 4등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
                         <div class="absolute top-0 right-0 bg-stone-200/50 dark:bg-stone-800 text-stone-600 dark:text-stone-300 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">4TH</div>
                         <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">4등</span>
                         <h3 class="text-xl font-serif font-bold">치킨</h3>
                     </div>
-                    <!-- 5등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-lightText/5 dark:border-studio-darkText/5 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
                         <div class="absolute top-0 right-0 bg-stone-200/50 dark:bg-stone-800 text-stone-600 dark:text-stone-300 text-[9px] font-bold px-3 py-1 rounded-bl-xl tracking-widest">5TH</div>
                         <span class="text-xs font-mono text-studio-accent font-semibold tracking-wider">5등</span>
@@ -387,67 +380,6 @@
         </div>
     </footer>
 
-    <!-- Case Study Slideout Modal -->
-    <div id="project-modal" class="fixed inset-y-0 right-0 w-full lg:w-[60vw] bg-studio-lightBg dark:bg-studio-darkBg border-l border-studio-lightText/10 dark:border-studio-darkText/10 z-50 transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl overflow-y-auto hidden">
-        <div class="sticky top-0 right-0 p-6 flex justify-between items-center bg-studio-lightBg/90 dark:bg-studio-darkBg/90 backdrop-blur-sm border-b border-studio-lightText/5 dark:border-studio-darkText/5 z-10">
-            <span class="text-xs font-mono text-studio-accent uppercase tracking-widest" id="modal-category">01 // BRANDING IDENTITY</span>
-            <button onclick="closeProjectModal()" class="w-10 h-10 border border-studio-lightText/10 dark:border-studio-darkText/10 hover:border-studio-accent rounded-full flex items-center justify-center text-sm font-semibold transition-colors duration-300">
-                ✕
-            </button>
-        </div>
-
-        <div class="p-8 md:p-12 space-y-12">
-            <div class="space-y-4">
-                <h2 class="text-4xl md:text-5xl font-serif font-light leading-tight" id="modal-title">Scent Studio — AI Fragrances</h2>
-                <div class="flex flex-wrap gap-2 pt-2 text-[10px] font-mono tracking-wider uppercase">
-                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Symbology Mapping</span>
-                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Psychology Tuning</span>
-                    <span class="bg-stone-200/50 dark:bg-stone-800/50 px-3 py-1.5 rounded-full">Self Calibration</span>
-                </div>
-            </div>
-
-            <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900 relative">
-                <img id="modal-image" src="" alt="Case Study Hero" class="w-full h-full object-cover">
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 text-sm">
-                <div class="md:col-span-8 space-y-4 font-light leading-relaxed text-justify">
-                    <h4 class="font-serif text-lg font-semibold uppercase tracking-wide text-studio-accent">상징적 거울 치료의 본질</h4>
-                    <p id="modal-description" class="text-stone-600 dark:text-stone-400">
-                        Analyzing consumer scents through machine-learning analytics. They required a premium luxury aesthetic that didn't feel robotic, but rather deeply tactile, sensual, and highly personalized.
-                    </p>
-                </div>
-                <div class="md:col-span-4 space-y-4 border-l border-studio-lightText/10 dark:border-studio-darkText/10 pl-6">
-                    <h4 class="font-serif text-sm font-semibold uppercase tracking-wide">성향 분석 핵심 가이드</h4>
-                    <ul class="space-y-2 text-xs font-mono text-stone-500" id="modal-outcomes">
-                        <li>-</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <h4 class="font-serif text-xl font-light">자아 정렬 세부 도안</h4>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-1" src="tarot1.jpg" alt="Sub Image 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                    </div>
-                    <div class="aspect-square bg-stone-100 dark:bg-stone-900 rounded-xl overflow-hidden">
-                        <img id="modal-subimage-2" src="ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png" alt="Sub Image 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-studio-lightText/10 dark:border-studio-darkText/10 flex flex-wrap gap-4 items-center justify-between">
-                <div>
-                    <span class="text-[10px] font-mono block text-stone-400">나만의 본질을 완벽히 복원할 기회</span>
-                </div>
-                <button onclick="closeProjectModal()" class="px-6 py-3 border border-studio-lightText dark:border-studio-darkText hover:border-studio-accent rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
-                    상담 안내창 닫기
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Apply Modal -->
     <div id="apply-modal" class="fixed inset-y-0 right-0 w-full lg:w-[520px] bg-studio-lightBg dark:bg-studio-darkBg z-50 transform translate-x-full transition-transform duration-500 hidden overflow-y-auto border-l border-studio-lightText/10 dark:border-studio-darkText/10 shadow-2xl">
         <div class="p-8">
@@ -459,7 +391,6 @@
             <form id="applyForm" class="space-y-4">
                 <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 
-                <!-- 정확한 8자리 생년월일 수집 필드 (수정됨) -->
                 <div>
                     <input 
                         required 
@@ -479,7 +410,7 @@
                 <input required name="phone" id="phone" pattern="^010-[0-9]{4}-[0-9]{4}$" title="010-0000-0000 형식으로 입력해 주세요." placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 
-                <!-- 날짜 및 시간 선택 필드 영역 -->
+                <!-- 날짜 및 시간 선택 필드 (name 값 고정) -->
                 <div class="space-y-2">
                     <p class="font-semibold text-xs uppercase tracking-wider text-stone-700 dark:text-stone-300">희망 상담 일정 선택</p>
                     <div class="grid grid-cols-2 gap-3">
@@ -506,7 +437,6 @@
                     <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
                 
-                <!-- Feedback message element -->
                 <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
                     3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!
                 </div>
@@ -516,27 +446,19 @@
         </div>
     </div>
 
-    <!-- Script Section for Google Sheets Connection and Unified App Logic -->
+    <!-- Script Section -->
     <script>
-        // --- 글로벌 상수 설정 ---
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiPliW6QR2LzHKOEoLG9s2ivivq4Vx6AYGI-xKzj_cdB8HNPLCBk4wkGafj7jPbZK4/exec';
 
-        // --- 페이지 네비게이션 로직 ---
         function navigateTo(pageId) {
             window.scrollTo({ top: 0, behavior: 'instant' });
-
             const pages = document.querySelectorAll('.page-view');
             const targetPage = document.getElementById(`page-${pageId}`);
-
             if (!targetPage) return;
 
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('text-studio-accent');
-            });
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('text-studio-accent'));
             const activeLink = document.getElementById(`nav-${pageId}`);
-            if (activeLink) {
-                activeLink.classList.add('text-studio-accent');
-            }
+            if (activeLink) activeLink.classList.add('text-studio-accent');
 
             pages.forEach(p => {
                 p.classList.add('hidden');
@@ -548,20 +470,13 @@
             targetPage.classList.add('block');
 
             if (typeof gsap !== 'undefined') {
-                gsap.fromTo(targetPage, 
-                    { opacity: 0, y: 15 }, 
-                    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-                );
+                gsap.fromTo(targetPage, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" });
             } else {
                 targetPage.style.opacity = 1;
             }
-
-            if (typeof ScrollTrigger !== 'undefined') {
-                ScrollTrigger.refresh();
-            }
+            if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
         }
 
-        // --- GSAP 스크롤 트리거 애니메이션 ---
         function initScrollAnimations() {
             if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
             try {
@@ -587,12 +502,10 @@
             }
         }
 
-        // --- 아코디언 로직 ---
         function toggleAccordion(id) {
             const content = document.getElementById(`acc-content-${id}`);
             const item = content.closest('.accordion-item');
             const icon = item.querySelector('.accordion-icon');
-            
             const isHidden = content.classList.contains('hidden');
             
             document.querySelectorAll('[id^="acc-content-"]').forEach(el => el.classList.add('hidden'));
@@ -609,7 +522,6 @@
             }
         }
 
-        // --- Readings 상세 보기 탭 데이터 구성 ---
         const readingDetails = {
             all: null,
             temperament: {
@@ -639,11 +551,7 @@
                 title: "나에게 맞는 성장 방향을 찾는 이유",
                 text: `
                     <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 나를 알면 선택이 달라집니다.</p>
-                    <p>
-                        우리는 매일 크고 작은 선택을 하며 살아갑니다.<br>
-                        하지만 내 성향을 잘 모른다면 중요한 순간에도 쉽게 흔들리거나 같은 고민을 반복하게 됩니다.<br>
-                        나를 이해하는 것은 더 나은 선택을 위한 첫걸음입니다.
-                    </p>
+                    <p>우리는 매일 크고 작은 선택을 하며 살아갑니다.<br>하지만 내 성향을 잘 모른다면 중요한 순간에도 쉽게 흔들리거나 같은 고민을 반복하게 됩니다.<br>나를 이해하는 것은 더 나은 선택을 위한 첫걸음입니다.</p>
                     <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 나에게 맞는 길은 따로 있습니다.</p>
                     <p>타로와 상담을 통해 자신의 성향과 강점을 알아가면 어떤 환경에서 더 잘 성장하는지, 어떤 방식이 나에게 잘 맞는지를 자연스럽게 발견할 수 있습니다. 다른 사람을 따라가기보다 나에게 맞는 방향을 찾을 때 더 편안하고 꾸준하게 앞으로 나아갈 수 있습니다.</p>
                 `
@@ -654,7 +562,6 @@
                 text: `
                     <p class="font-medium text-studio-lightText dark:text-studio-darkText">■ 나에게 맞는 해결 방법을 찾을 수 있습니다.</p>
                     <p class="mb-4">누구에게나 같은 해결 방법이 맞는 것은 아닙니다. 상담을 통해 나의 성향과 현재 상황을 함께 살펴보며, 지금 나에게 가장 잘 맞는 선택과 해결 방법을 찾아갈 수 있습니다.</p>
-                    
                     <p class="font-medium text-studio-lightText dark:text-studio-darkText pt-2">■ 일상에서 바로 활용할 수 있습니다.</p>
                     <p class="mb-2">상담은 단순히 이야기를 나누는 시간에서 끝나지 않습니다.</p>
                     <ul class="space-y-1 text-stone-500 list-disc pl-5 mb-4 text-xs sm:text-sm">
@@ -664,7 +571,6 @@
                         <li>중요한 순간에 나에게 맞는 선택을 하는 방법</li>
                     </ul>
                     <p class="mb-6">상담에서 얻은 내용을 일상에 적용하며, 나에게 맞는 방식으로 조금씩 변화를 만들어 갈 수 있습니다.</p>
-
                     <div class="mt-6 pt-6 border-t border-studio-lightText/10 dark:border-studio-darkText/10 bg-studio-accent/5 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="space-y-1">
                             <span class="text-xs font-bold text-studio-accent uppercase tracking-widest block">SPECIAL OFFER // 묘하당 3회 체험 프로그램</span>
@@ -680,7 +586,6 @@
             }
         };
 
-        // --- Readings 필터링 제어 로직 ---
         function filterTab(category) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.className = "tab-btn px-5 py-2.5 border border-stone-200 dark:border-stone-800 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors";
@@ -702,17 +607,13 @@
                         duration: 0.3,
                         onComplete: () => {
                             infoBoard.classList.add('hidden');
-                            document.querySelectorAll('.portfolio-card').forEach(card => {
-                                card.style.display = 'block';
-                            });
+                            document.querySelectorAll('.portfolio-card').forEach(card => card.style.display = 'block');
                             if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
                         }
                     });
                 } else {
                     infoBoard.classList.add('hidden');
-                    document.querySelectorAll('.portfolio-card').forEach(card => {
-                        card.style.display = 'block';
-                    });
+                    document.querySelectorAll('.portfolio-card').forEach(card => card.style.display = 'block');
                 }
             } else {
                 const data = readingDetails[category];
@@ -731,87 +632,11 @@
                     infoBoard.style.opacity = 1;
                 }
 
-                document.querySelectorAll('.portfolio-card').forEach(card => {
-                    card.style.display = 'none'; 
-                });
+                document.querySelectorAll('.portfolio-card').forEach(card => card.style.display = 'none');
                 if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
             }
         }
 
-        // --- 개별 프로젝트 모달 세부 데이터 구성 ---
-        const projectData = {
-            scent: {
-                title: "묘하당 무의식 아키타입 카드 데크",
-                category: "THE ARCHETYPE SYSTEM",
-                image: "tarot1.jpg",
-                description: "인간의 무의식 저변에 자리한 78개의 정신적 이정표를 고양이 타로 아키타입으로 정교화하여 구현했습니다. 나의 감정과 기질을 시각적으로 투사하여 스스로에게 필요한 정답을 찾아가도록 돕습니다.",
-                outcomes: ["강점: 고도의 분석력과 기밀 유지 지능", "약점 극복: 과도한 자기 고립과 불통 현상 탈피", "행동 가이드: 중차대한 결정 전 침묵의 시간 설정"],
-                sub1: "tarot1.jpg",
-                sub2: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png"
-            },
-            luminary: {
-                title: "미요와 함께하는 타로 & 칵테일 테라피",
-                category: "TACTILE SENSORY EXPERIENCE",
-                image: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
-                description: "오감을 자극하는 특별한 감성 테라피 세션입니다. 타로 리딩을 통해 진단된 심리 기질 결과에 맞춘 전용 칵테일을 페어링하여, 복잡한 생각을 비워내고 나만을 위한 온전한 치유의 밤을 선사합니다.",
-                outcomes: ["강점: 도덕적 당위성과 멘토링적 자질", "약점 극복: 완고한 고정관념과 독선적 태도 통제", "행동 가이드: 외부의 검증된 가이드라인과 융통성 수렴"],
-                sub1: "ChatGPT%20Image%202026%EB%85%84%207%EC%9W%94%207%EC%9D%BC%20%EC%98%A4%EC%A0%84%2008_44_21.png",
-                sub2: "tarot1.jpg"
-            }
-        };
-
-        // --- 상세 보기 모달 제어 로직 ---
-        function openProjectModal(projectId) {
-            const data = projectData[projectId];
-            if (!data) return;
-
-            const titleEl = document.getElementById('modal-title');
-            const catEl = document.getElementById('modal-category');
-            const imgEl = document.getElementById('modal-image');
-            const descEl = document.getElementById('modal-description');
-            const sub1El = document.getElementById('modal-subimage-1');
-            const sub2El = document.getElementById('modal-subimage-2');
-
-            if (titleEl) titleEl.innerText = data.title;
-            if (catEl) catEl.innerText = data.category;
-            if (imgEl) imgEl.src = data.image;
-            if (descEl) descEl.innerText = data.description;
-            if (sub1El) sub1El.src = data.sub1 || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-            if (sub2El) sub2El.src = data.sub2 || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-
-            const outcomesList = document.getElementById('modal-outcomes');
-            if (outcomesList) {
-                outcomesList.innerHTML = '';
-                data.outcomes.forEach(out => {
-                    const li = document.createElement('li');
-                    li.innerText = `→ ${out}`;
-                    outcomesList.appendChild(li);
-                });
-            }
-
-            const modal = document.getElementById('project-modal');
-            if (modal) {
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('translate-x-full');
-                }, 50);
-            }
-
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectModal() {
-            const modal = document.getElementById('project-modal');
-            if (modal) {
-                modal.classList.add('translate-x-full');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }, 500);
-            }
-        }
-
-        // --- 신청하기 모달 제어 로직 ---
         function openApplyModal(){
             const m = document.getElementById('apply-modal');
             const successMsg = document.getElementById('apply-success-msg');
@@ -828,16 +653,13 @@
             document.body.style.overflow='';
         }
 
-        // --- 양식 입력 필드 포맷팅 및 구글 스프레드시트 비동기 접수 로직 ---
         document.addEventListener('DOMContentLoaded', () => {
-            // 과거 날짜 선택 방지 (오늘 날짜부터 지정 가능하도록 처리)
             const preferredDateInput = document.getElementById('preferred_date');
             if (preferredDateInput) {
                 const today = new Date().toISOString().split('T')[0];
                 preferredDateInput.setAttribute('min', today);
             }
 
-            // 생년월일 8자리 실시간 숫자 제한 마스킹 처리
             const birthdateInput = document.getElementById('birthdate');
             if (birthdateInput) {
                 birthdateInput.addEventListener('input', e => {
@@ -845,7 +667,6 @@
                 });
             }
 
-            // 연락처 하이픈 자동 마스킹 및 실시간 포맷팅 처리
             const phone = document.getElementById('phone');
             if (phone) {
                 phone.addEventListener('input', e => {
@@ -856,7 +677,7 @@
                 });
             }
 
-            // 구글 시트 전송 핸들러 바인딩
+            // 신청서 제출 이벤트 핸들러
             const applyForm = document.getElementById('applyForm');
             if (applyForm) {
                 applyForm.addEventListener('submit', e => {
@@ -869,6 +690,7 @@
                     submitBtn.disabled = true;
                     submitBtn.innerText = "전송 중...";
 
+                    // 폼 데이터 생성
                     const formData = new FormData(form);
                     const searchParams = new URLSearchParams(formData);
                     
@@ -905,42 +727,17 @@
                     });
                 });
             }
-
-            // 스마트 이미지 하이브리드 로더 감지 로직
-            const fallbackMap = {
-                'tarot_deck': 'tarot1.jpg', 
-                'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' 
-            };
-
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                const src = img.getAttribute('src');
-                if (!src) return;
-
-                img.onerror = () => {
-                    if (src.includes('09_22_52') || src.includes('%EB%85%84') || src.includes('tarot1')) {
-                        img.src = fallbackMap['tarot_deck'];
-                    } else if (src.includes('08_44_21')) {
-                        img.src = fallbackMap['cocktail_cat'];
-                    }
-                    img.onerror = null; 
-                };
-            });
         });
 
-        // 페이지 첫 로드 실행 부트스트랩
         window.onload = function () {
             navigateTo('readings'); 
             setTimeout(() => navigateTo('home'), 50); 
             initScrollAnimations();
         }
 
-        // 글로벌 함수 바인딩
         window.navigateTo = navigateTo;
         window.toggleAccordion = toggleAccordion;
         window.filterTab = filterTab;
-        window.openProjectModal = openProjectModal;
-        window.closeProjectModal = closeProjectModal;
         window.openApplyModal = openApplyModal;
         window.closeApplyModal = closeApplyModal;
     </script>
