@@ -320,7 +320,7 @@
                     </p>
                 </div>
 
-                <!-- Prize Matrix Grid (상세 한 줄 묘사 문구 완벽 제거됨) -->
+                <!-- Prize Matrix Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
                     <!-- 1등 -->
                     <div class="p-8 rounded-2xl bg-stone-100 dark:bg-[#111110] border border-studio-accent/20 flex flex-col justify-center items-center text-center space-y-4 relative overflow-hidden shadow-sm hover:border-studio-accent transition-all duration-300 min-h-[160px]">
@@ -458,13 +458,30 @@
             
             <form id="applyForm" class="space-y-4">
                 <input required name="name" placeholder="이름" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required name="birthdate" placeholder="생년월일 (YYYYMMDD)" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
-                <input required name="phone" id="phone" required pattern="^010-[0-9]{4}-[0-9]{4}$" placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
+                
+                <!-- 정확한 8자리 생년월일 수집 필드 (수정됨) -->
+                <div>
+                    <input 
+                        required 
+                        name="birthdate" 
+                        id="birthdate" 
+                        type="text" 
+                        inputmode="numeric" 
+                        maxlength="8" 
+                        pattern="^(19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$" 
+                        title="생년월일 8자리를 정확히 입력해 주세요. (예: 19980521)" 
+                        placeholder="생년월일 8자리 (예: 19980521)" 
+                        class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" 
+                    />
+                    <p class="text-[10px] text-stone-400 mt-1 pl-1">※ 숫자만 8자리 입력 (YYYYMMDD)</p>
+                </div>
+
+                <input required name="phone" id="phone" pattern="^010-[0-9]{4}-[0-9]{4}$" title="010-0000-0000 형식으로 입력해 주세요." placeholder="010-0000-0000" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 <input name="email" type="email" placeholder="이메일" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent" />
                 
-                <!-- 추가된 날짜 및 시간 선택 필드 영역 -->
+                <!-- 날짜 및 시간 선택 필드 영역 -->
                 <div class="space-y-2">
-                    <p class="font-semibold text-xs uppercase tracking-wider">희망 상담 일정 선택</p>
+                    <p class="font-semibold text-xs uppercase tracking-wider text-stone-700 dark:text-stone-300">희망 상담 일정 선택</p>
                     <div class="grid grid-cols-2 gap-3">
                         <div class="relative">
                             <input type="date" required name="preferred_date" id="preferred_date" class="w-full p-3 rounded-xl border bg-transparent dark:border-stone-800 focus:outline-none focus:border-studio-accent text-sm appearance-none" />
@@ -476,7 +493,7 @@
                 </div>
 
                 <div>
-                    <p class="mb-2 font-semibold text-xs uppercase tracking-wider">신청항목</p>
+                    <p class="mb-2 font-semibold text-xs uppercase tracking-wider text-stone-700 dark:text-stone-300">신청항목</p>
                     <div class="space-y-2 text-sm">
                         <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="타로" class="accent-studio-accent" required> 타로</label>
                         <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="cat" value="진로" class="accent-studio-accent"> 진로</label>
@@ -489,7 +506,7 @@
                     <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
                 
-                <!-- Feedback message element (replaces alert window) -->
+                <!-- Feedback message element -->
                 <div id="apply-success-msg" class="hidden p-3 bg-stone-100 dark:bg-stone-900 border border-studio-accent text-studio-accent rounded-xl text-xs text-center font-semibold">
                     3회 체험 프로그램 신청이 완료되었습니다. 곧 연락드리겠습니다!
                 </div>
@@ -721,7 +738,6 @@
             }
         }
 
-        // --- STREAMING_CHUNK: Updating JavaScript data models and image load fallbacks... ---
         // --- 개별 프로젝트 모달 세부 데이터 구성 ---
         const projectData = {
             scent: {
@@ -814,6 +830,21 @@
 
         // --- 양식 입력 필드 포맷팅 및 구글 스프레드시트 비동기 접수 로직 ---
         document.addEventListener('DOMContentLoaded', () => {
+            // 과거 날짜 선택 방지 (오늘 날짜부터 지정 가능하도록 처리)
+            const preferredDateInput = document.getElementById('preferred_date');
+            if (preferredDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                preferredDateInput.setAttribute('min', today);
+            }
+
+            // 생년월일 8자리 실시간 숫자 제한 마스킹 처리
+            const birthdateInput = document.getElementById('birthdate');
+            if (birthdateInput) {
+                birthdateInput.addEventListener('input', e => {
+                    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 8);
+                });
+            }
+
             // 연락처 하이픈 자동 마스킹 및 실시간 포맷팅 처리
             const phone = document.getElementById('phone');
             if (phone) {
@@ -875,7 +906,7 @@
                 });
             }
 
-            // --- 🖼️ 스마트 이미지 하이브리드 로더 감지 로직 ---
+            // 스마트 이미지 하이브리드 로더 감지 로직
             const fallbackMap = {
                 'tarot_deck': 'tarot1.jpg', 
                 'cocktail_cat': 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000' 
@@ -897,14 +928,14 @@
             });
         });
 
-        // --- 페이지 첫 로드 실행 부트스트랩 ---
+        // 페이지 첫 로드 실행 부트스트랩
         window.onload = function () {
             navigateTo('readings'); 
             setTimeout(() => navigateTo('home'), 50); 
             initScrollAnimations();
         }
 
-        // --- ⚠️ 매우 중요: Blob 및 보안 샌드박스 환경 우회를 위한 명시적 글로벌 바인딩 ---
+        // 글로벌 함수 바인딩
         window.navigateTo = navigateTo;
         window.toggleAccordion = toggleAccordion;
         window.filterTab = filterTab;
